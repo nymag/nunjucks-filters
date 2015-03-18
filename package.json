@@ -1,0 +1,11 @@
+{
+  "name": "byline-nunjucks",
+  "version": "0.0.1",
+  "description": "Byline-specific nunjucks environment",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "New York Media",
+  "license": "MIT"
+}

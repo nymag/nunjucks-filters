@@ -16,5 +16,5 @@ module.exports = function (app) {
   // set up filters
   filters(env);
 
-  return app;
+  return env;
 };

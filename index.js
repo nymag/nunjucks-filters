@@ -6,10 +6,11 @@ var nunjucks = require('nunjucks'),
 
 module.exports = function (app) {
   // configure nunjucks env and add it to the express app
-  var env = nunjucks.configure('layouts', {
+  var env = nunjucks.configure('.', {
     express: app,
     autoescape: true
   });
+
   // set default view engine
   app.set('view engine', 'nunjucks');
 

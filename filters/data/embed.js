@@ -2,9 +2,7 @@
 
 var nunjucks = require('nunjucks'),
   _ = require('lodash'),
-  path = require('path'),
-  cwd = process.cwd(),
-  components = cwd + '/components';
+  path = require('path');
 
 /**
  * The env could come from multiple sources
@@ -28,10 +26,7 @@ function getEnv(obj) {
  * @param {{}} env
  */
 function embed(data, name, env) {
-  if (name.indexOf('template.nunjucks') !== -1) {
-    throw new Error('what');
-  }
-  var templatePath = [components, name, 'template.nunjucks'].join(path.sep);
+  var templatePath = ['components', name, 'template.nunjucks'].join(path.sep);
   return env.render(templatePath, data);
 }
 

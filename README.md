@@ -1,6 +1,7 @@
 # byline-nunjucks
 
 [![Build Status](https://travis-ci.org/nymag/byline-nunjucks.svg)](https://travis-ci.org/nymag/byline-nunjucks)
+[![Code Climate](https://codeclimate.com/github/nymag/byline-nunjucks/badges/gpa.svg)](https://codeclimate.com/github/nymag/byline-nunjucks)
 
 Nunjucks environment and filters
 

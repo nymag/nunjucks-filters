@@ -1,5 +1,7 @@
 # byline-nunjucks
 
+[![Build Status](https://travis-ci.org/nymag/byline-nunjucks.svg)](https://travis-ci.org/nymag/byline-nunjucks)
+
 Nunjucks environment and filters
 
 # Installation

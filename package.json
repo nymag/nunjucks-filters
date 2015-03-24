@@ -9,7 +9,7 @@
   "author": "New York Media",
   "license": "MIT",
   "dependencies": {
-    "byline-embed": "0.0.1",
+    "byline-embed": "^0.0.2",
     "glob": "^5.0.3",
     "he": "^0.5.0",
     "lodash": "^3.5.0",

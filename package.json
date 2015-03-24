@@ -1,6 +1,6 @@
 {
   "name": "byline-nunjucks",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Byline-specific nunjucks environment",
   "main": "index.js",
   "scripts": {

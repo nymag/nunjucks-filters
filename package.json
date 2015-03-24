@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "chai": "^2.1.2",
-    "mocha": "^2.2.1"
+    "mocha": "^2.2.1",
+    "nunjucks": "^1.2.0"
   }
 }

@@ -4,10 +4,9 @@
 var nunjucks = require('nunjucks'),
   filters = require('./filters');
 
-module.exports = function (app) {
+module.exports = function () {
   // configure nunjucks env and add it to the express app
   var env = nunjucks.configure('.', {
-    express: app,
     autoescape: true
   });
 

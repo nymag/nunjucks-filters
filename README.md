@@ -17,9 +17,17 @@ Simply require it in your `app.js` file
 
 ```js
 var app = require('express')(),
-  nunjucks = require('byline-nunjucks');
+  nunjucks = require('byline-nunjucks')();
 
 app.engine('nunjucks', nunjucks);
+```
+
+## Preserving the environment
+
+If you want to preserve your nunjucks environment, you can pass it through
+
+```js
+var nunjucks = require('byline-nunjucks')(env);
 ```
 
 ## Custom Filters

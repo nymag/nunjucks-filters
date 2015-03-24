@@ -12,11 +12,7 @@ module.exports = function (env, cb) {
     _.each(_.filter(files, function (file) { return file.indexOf('.test.js') === -1; }), function (file) {
       var filter = require(file);
 
-      if (_.contains(file, 'embed.js')) {
-        // embed filter needs the env passed into it
-        env.addFilter(getNameFromPath(file), filter.bind(env));
-      } else if (_.isFunction(filter)) {
-        // otherwise pass the context into it
+      if (_.isFunction(filter)) {
         env.addFilter(getNameFromPath(file), filter);
       }
     });

@@ -1,11 +1,8 @@
 'use strict';
 
-// byline-specific nunjucks filters and environment
-var nunjucks = require('nunjucks'),
+var embed = require('byline-embed'),
   filters = require('./filters'),
-  env = nunjucks.configure('.', {
-    autoescape: true
-  });
+  env = embed.engines.nunjucks;
 
 // set up filters
 filters(env);

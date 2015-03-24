@@ -11,9 +11,6 @@ module.exports = function (app) {
     autoescape: true
   });
 
-  // set default view engine
-  app.set('view engine', 'nunjucks');
-
   // set up filters
   filters(env);
 

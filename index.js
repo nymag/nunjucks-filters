@@ -1,16 +1,17 @@
 'use strict';
-var filters = require('./filters');
+var filters = require('./filters'),
+  nunjucks = require('nunjucks');
 
 module.exports = function (env) {
-  var embed;
-
-  if (env) {
+  if (!env) {
+    // instantiate a new nunjucks environment
+    env = nunjucks.configure('.', { autoescape: true });
     // set up filters
     filters(env);
-  } else {
-    embed = require('byline-embed');
-    env = embed.engines.nunjucks;
   }
+
+  // set up filters
+  filters(env);
 
   return env;
 };

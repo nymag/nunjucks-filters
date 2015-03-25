@@ -1,16 +1,16 @@
 {
-  "name": "byline-nunjucks",
-  "version": "0.1.9",
-  "description": "Byline-specific nunjucks environment",
+  "name": "nunjucks-filters",
+  "version": "0.1.10",
+  "description": "Useful nunjucks filters",
   "main": "index.js",
   "scripts": {
     "test": "mocha filters/index.test.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/nymag/byline-nunjucks.git"
+    "url": "https://github.com/nymag/nunjucks-filters.git"
   },
-  "homepage": "https://github.com/nymag/byline-embed",
+  "homepage": "https://github.com/nymag/nunjucks-filters",
   "author": "New York Media",
   "license": "MIT",
   "dependencies": {

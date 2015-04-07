@@ -2,7 +2,7 @@
 var he = require('he'),
   _ = require('lodash');
 
-module.exports = function(entities) {
+module.exports = function (entities) {
   if (typeof entities === 'undefined') {
     return entities;
   } else {

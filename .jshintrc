@@ -1,7 +1,6 @@
 {
   "bitwise":    true,   // prevent bitwise operations (e.g. ^, |, &)
   "camelcase":  true,   // all vars must use camelCase
-  "browser":    true,   // allow browser global vars
   "curly":      true,   // require curly brackets in loops and conditionals
   "eqeqeq":     true,   // require strict equality
   "forin":      true,   // require hasOwnProperty check in for...in loops

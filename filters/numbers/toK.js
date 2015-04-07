@@ -1,6 +1,6 @@
 'use strict';
 // Nunjucks Filter: Convert 1000 to 1k.
-module.exports = function(x) {
+module.exports = function (x) {
   var currentNumber = parseInt(x, 10); // always specify radix with arbitrary input
 
   if (isNaN(currentNumber)) {

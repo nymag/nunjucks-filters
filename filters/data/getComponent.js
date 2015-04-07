@@ -8,8 +8,6 @@ module.exports = function () {
 
   var context = this.ctx,
     name = Object.keys(context)[0],
-    data = context[name],
-    component = { name: name, data: data };
-
-  return component;
+    data = context[name];
+  return {name: name, data: data};
 };

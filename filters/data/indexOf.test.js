@@ -9,8 +9,8 @@ describe('Filters: ' + filterName, function () {
   });
 
   it('return index of item on match', function () {
-    var arr = ["test"],
-      item = "test";
+    var arr = ['test'],
+      item = 'test';
     expect(filter(arr, item)).to.equal(0);
   });
 });

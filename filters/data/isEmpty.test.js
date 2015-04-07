@@ -17,6 +17,6 @@ describe('Filters: ' + filterName, function () {
   });
 
   it('return false on non-empty object', function () {
-    expect(filter({"thing": "thing", "thing2": "thing2"})).to.be.false;
+    expect(filter({thing: 'thing', thing2: 'thing2'})).to.be.false;
   });
 });

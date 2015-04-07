@@ -1,6 +1,6 @@
 {
   "name": "nunjucks-filters",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "Useful nunjucks filters",
   "main": "index.js",
   "scripts": {
@@ -13,6 +13,10 @@
   "homepage": "https://github.com/nymag/nunjucks-filters",
   "author": "New York Media",
   "license": "MIT",
+  "keywords": [
+    "nunjucks",
+    "filters"
+  ],
   "dependencies": {
     "glob": "^5.0.3",
     "he": "^0.5.0",

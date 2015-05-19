@@ -5,7 +5,7 @@ var filters = require('./filters'),
 module.exports = function (env) {
   if (!env) {
     // instantiate a new nunjucks environment
-    env = nunjucks.configure('.', { autoescape: true });
+    env = nunjucks.configure('.', { autoescape: true, watch: false });
     // set up filters
     filters(env);
   }

@@ -1,28 +1,65 @@
 'use strict';
-var filterName = __filename.split('/').pop().split('.').shift(),
+var _ = require('lodash'),
+  filterName = __filename.split('/').pop().split('.').shift(),
   filter = require('./' + filterName),
-  expect = require('chai').expect;
+  expect = require('chai').expect,
+  sinon = require('sinon');
 
 describe('Filters: ' + filterName, function () {
-  var date = '2015-04-30T14:31:00.000Z';
+  var sandbox,
+    fakeMomentInstance,
+    fakeMoment;
+
+  function createFakeMoment() {
+    fakeMomentInstance = {
+      format: _.noop
+    };
+
+    fakeMoment = sandbox.stub();
+    fakeMoment.returns(fakeMomentInstance);
+    sandbox.stub(fakeMomentInstance, 'format');
+
+    return { utc: fakeMoment };
+  }
+
+  beforeEach(function () {
+    sandbox = sinon.sandbox.create();
+    filter.setMoment(createFakeMoment());
+  });
+
+  afterEach(function () {
+    sandbox.restore();
+  });
 
   it('formats with default format', function () {
-    expect(filter(date)).to.equal('4/30/2015 at 2:31 pm');
+    var result,
+      date = 'something',
+      defaultFormat = filter.getDefaultFormat(),
+      expectedResult = 'whatever';
+
+    fakeMomentInstance.format.returns(expectedResult);
+
+    result = filter(date);
+
+    sinon.assert.calledWith(fakeMoment, date);
+    sinon.assert.calledWith(fakeMomentInstance.format, defaultFormat);
+
+    expect(result).to.equal(expectedResult);
   });
 
-  it('formats with custom date format', function () {
-    expect(filter(date, 'MMMM D, YYYY')).to.equal('April 30, 2015');
-  });
+  it('formats with given format', function () {
+    var result,
+      date = 'something',
+      givenFormat = 'something else',
+      expectedResult = 'whatever';
 
-  it('formats with custom time format', function () {
-    expect(filter(date, 'h:mm a')).to.equal('2:31 pm');
-  });
+    fakeMomentInstance.format.returns(expectedResult);
 
-  it('formats with dots', function () {
-    expect(filter(date, true)).to.equal('4/30/2015 at 2:31 p.m.');
-  });
+    result = filter(date, givenFormat);
 
-  it('formats with dots and custom format', function () {
-    expect(filter(date, 'h:mm a', true)).to.equal('2:31 p.m.');
+    sinon.assert.calledWith(fakeMoment, date);
+    sinon.assert.calledWith(fakeMomentInstance.format, givenFormat);
+
+    expect(result).to.equal(expectedResult);
   });
 });

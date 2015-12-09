@@ -1,6 +1,6 @@
 'use strict';
 var nunjucks = require('nunjucks'),
-  env = new nunjucks.Environment(new nunjucks.FileSystemLoader('.', true)),
+  env = new nunjucks.Environment(new nunjucks.FileSystemLoader('.', {watch: true})),
   filterName = __filename.split('/').pop().split('.').shift(),
   filter = require('./' + filterName).bind(env),
   expect = require('chai').expect;

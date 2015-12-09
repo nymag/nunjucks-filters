@@ -7,7 +7,7 @@ var nunjucks = require('nunjucks'),
 describe('Filter: index', function () {
   it('loads', function (done) {
 
-    var env = new nunjucks.Environment(new nunjucks.FileSystemLoader('.', true));
+    var env = new nunjucks.Environment(new nunjucks.FileSystemLoader('.', {watch: true}));
 
     index(env, function (err, envWithFilters) {
       _.each(envWithFilters.filters, function (filter) {

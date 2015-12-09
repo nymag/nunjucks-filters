@@ -1,6 +1,6 @@
 {
   "name": "nunjucks-filters",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "Useful nunjucks filters",
   "main": "index.js",
   "scripts": {

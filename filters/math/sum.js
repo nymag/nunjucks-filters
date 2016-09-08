@@ -14,7 +14,7 @@ module.exports = function (iterable, keywords) {
 
   if (_.isArray(iterable)) {
     if (_.isString(attribute)) {
-      iterable = _.pluck(iterable, attribute);
+      iterable = _.map(iterable, attribute);
     }
     result = _.reduce(iterable, function (num, value) {
       num += value;

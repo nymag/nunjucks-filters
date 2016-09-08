@@ -1,4 +1,3 @@
-'use strict';
 var filterName = __filename.split('/').pop().split('.').shift(),
   filter = require('./' + filterName),
   expect = require('chai').expect;

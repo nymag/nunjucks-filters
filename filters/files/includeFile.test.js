@@ -3,15 +3,15 @@ var filterName = __filename.split('/').pop().split('.').shift(),
   expect = require('chai').expect;
 
 describe('Filters: ' + filterName, function () {
-  it('return emptystring on empty', function () {
+  it('returns emptystring on empty', function () {
     expect(filter()).to.equal('');
   });
 
-  it('return buffer with toString method', function () {
-    expect(filter('test/mocha.opts').toString).to.be.instanceof(Function);
+  it('returns emptystring on error', function () {
+    expect(filter('not/a/path/to/any/file')).to.equal('');
   });
 
-  it('return emptystring on error', function () {
-    expect(filter('not/a/path/to/any/file')).to.equal('');
+  it('returns string', function () {
+    expect(filter('test/mocha.opts')).to.equal('--reporter dot\n--ui bdd\n--recursive\nfilters/**/*.js');
   });
 });

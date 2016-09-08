@@ -9,7 +9,7 @@ function getNameFromPath(path) {
 module.exports = function (env, cb) {
   // options is optional
   glob('./**/*.js', { cwd: __dirname }, function (err, files) {
-    _.each(_.filter(files, function (file) { return file.indexOf('.test.js') === -1; }), function (file) {
+    _.each(_.filter(files, function (file) { return file.indexOf('.test.js') === -1 && file.indexOf('index.js') === -1; }), function (file) {
       var filter = require(file);
 
       if (_.isFunction(filter)) {

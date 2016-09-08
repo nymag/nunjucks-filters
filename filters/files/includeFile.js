@@ -1,10 +1,9 @@
-'use strict';
 var fs = require('fs');
 
 module.exports = function (path) {
-  if (fs.existsSync(path)) {
+  try {
     return fs.readFileSync(path);
-  } else {
-    return '';
+  } catch (e) {
+    return e.message;
   }
 };

@@ -8,7 +8,7 @@ describe('Filters: ' + filterName, function () {
     expect(filter()).to.be.falsy;
   });
 
-  it('return Buffer type', function () {
-    expect(filter('test/mocha.opts')).to.be.instanceof(Buffer);
+  it('return object with toString method', function () {
+    expect(filter('test/mocha.opts').toString).to.be.instanceof(Function);
   });
 });

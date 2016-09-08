@@ -1,6 +1,9 @@
-'use strict';
-var glob = require('glob'),
+const glob = require('glob'),
   _ = require('lodash');
+
+function isFilter(path) {
+  return !_.includes(path, '.test.js') && !_.includes(path, 'index.js');
+}
 
 function getNameFromPath(path) {
   return path.split('/').pop().split('.').shift();
@@ -9,7 +12,11 @@ function getNameFromPath(path) {
 module.exports = function (env, cb) {
   // options is optional
   glob('./**/*.js', { cwd: __dirname }, function (err, files) {
-    _.each(_.filter(files, function (file) { return file.indexOf('.test.js') === -1 && file.indexOf('index.js') === -1; }), function (file) {
+    if (err) {
+      console.error(err.message, err.stack);
+    }
+
+    _.each(_.filter(files, isFilter), function (file) {
       var filter = require(file);
 
       if (_.isFunction(filter)) {

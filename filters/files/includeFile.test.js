@@ -3,11 +3,15 @@ var filterName = __filename.split('/').pop().split('.').shift(),
   expect = require('chai').expect;
 
 describe('Filters: ' + filterName, function () {
-  it('return false on empty', function () {
-    expect(filter()).to.be.falsy;
+  it('return emptystring on empty', function () {
+    expect(filter()).to.equal('');
   });
 
-  it('return object with toString method', function () {
+  it('return buffer with toString method', function () {
     expect(filter('test/mocha.opts').toString).to.be.instanceof(Function);
+  });
+
+  it('return emptystring on error', function () {
+    expect(filter('not/a/path/to/any/file')).to.equal('');
   });
 });

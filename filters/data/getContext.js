@@ -2,7 +2,7 @@
 var _ = require('lodash');
 
 module.exports = function () {
-  var arrayLike = _.pick(this.ctx, function (val, key) {
+  var arrayLike = _.pickBy(this.ctx, function (val, key) {
     return !isNaN(parseInt(key));
   });
 
